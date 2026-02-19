@@ -1,0 +1,4 @@
+{
+"action": "generate_image",
+"action_input": "{'prompt': 'A professional social preview banner for a software developer portfolio. Dark theme with deep blue and slate grey background. In the center, high-tech glowing icons of Java, React, Python, and Node.js. Modern typography saying "Nicolas Henrique - Full Stack Developer". Mention "FACENS" and "Lab TI Specialist". Clean, minimalist, high resolution, 1200x630 aspect ratio, tech aesthetics.'}"
+}
