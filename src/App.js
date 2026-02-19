@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, ExternalLink, Code2, Terminal, Cpu, Mail, Briefcase, GraduationCap } from 'lucide-react';
+import { Linkedin, ExternalLink, Code2, Terminal, Cpu, Mail, Briefcase, GraduationCap } from 'lucide-react';
 
 function App() {
   const skills = [
