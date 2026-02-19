@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, ExternalLink, Code2, Terminal, Cpu, Mail, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, ExternalLink, Code2, Terminal, Cpu, Mail, Briefcase, GraduationCap } from 'lucide-react';
 
 function App() {
   const skills = [
@@ -159,13 +159,14 @@ function App() {
       {/* FOOTER */}
       <footer className="py-20 border-t border-gray-800 text-center bg-gray-950/20">
         <div className="flex justify-center gap-6 mb-6">
+          <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition"><Github /></a>
           <a href="mailto:nicolashenrique921@gmail.com" className="text-gray-400 hover:text-white transition"><Mail size={24}/></a>
           <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition"><Linkedin size={24}/></a>
         </div>
         <p className="text-gray-400 font-medium">Nicolas Henrique de Oliveira</p>
         <div className="text-gray-600 text-xs mt-4 flex flex-col gap-1">
-            <p>Sôr-15 99158-2545 | 15 99604-7825</p>
-            <p className="italic">FACENS Sorocaba • © 2026</p>
+            <p>Contato/WhatsApp - 15 99158-2545 | 15 99604-7825</p>
+            <p className="italic">Grato! • © 2026</p>
         </div>
       </footer>
     </div>
