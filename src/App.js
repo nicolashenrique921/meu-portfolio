@@ -1,111 +1,122 @@
 import React from 'react';
+import { Github, Linkedin, ExternalLink, Code2, Terminal, Cpu } from 'lucide-react';
 
 function App() {
+  const skills = [
+    { name: 'Java', color: 'text-[#007396]' },
+    { name: 'Spring Boot', color: 'text-[#6DB33F]' },
+    { name: 'React', color: 'text-[#61DAFB]' },
+    { name: 'Angular', color: 'text-[#DD0031]' },
+    { name: 'Node.js', color: 'text-[#339933]' },
+    { name: 'TypeScript', color: 'text-[#3178C6]' },
+    { name: 'JavaScript', color: 'text-[#F7DF1E]' },
+    { name: 'Python', color: 'text-[#3776AB]' },
+    { name: 'SQL', color: 'text-[#4479A1]' },
+    { name: 'Git', color: 'text-[#F05032]' },
+  ];
+
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans">
-      {/* Header / Nav */}
-      <nav className="p-6 flex justify-between items-center border-b border-gray-800 sticky top-0 bg-gray-900/90 backdrop-blur-sm z-10">
-        <h1 className="text-xl font-bold text-blue-400">Nicolas Henrique</h1>
-        <div className="space-x-6">
-          <a href="#sobre" className="hover:text-blue-400 transition">Sobre</a>
-          <a href="#projetos" className="hover:text-blue-400 transition">Projetos</a>
-          {/* Link para o seu LinkedIn no Header */}
-          <a 
-            href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-gray-300 hover:text-[#0077b5] transition"
-          >
-            LinkedIn
+      {/* Nav */}
+      <nav className="p-6 flex justify-between items-center border-b border-gray-800 sticky top-0 bg-gray-900/90 backdrop-blur-sm z-50">
+        <div className="flex items-center gap-2">
+          <Code2 className="text-blue-400" />
+          <h1 className="text-xl font-bold tracking-tight">Nicolas Henrique</h1>
+        </div>
+        <div className="flex items-center space-x-6">
+          <a href="#sobre" className="hover:text-blue-400 transition text-sm font-medium">Sobre</a>
+          <a href="#projetos" className="hover:text-blue-400 transition text-sm font-medium">Projetos</a>
+          <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" target="_blank" rel="noreferrer">
+            <Linkedin className="w-5 h-5 hover:text-blue-400 transition" />
           </a>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header id="sobre" className="py-20 px-10 text-center">
+      {/* Hero */}
+      <header id="sobre" className="py-24 px-10 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full"></div>
         <img 
           src="https://github.com/nicolashenrique921.png" 
-          alt="Nicolas Henrique" 
-          className="w-32 h-32 rounded-full mx-auto border-4 border-blue-500 mb-6 shadow-lg shadow-blue-500/20"
+          alt="Nicolas" 
+          className="w-32 h-32 rounded-full mx-auto border-4 border-gray-800 shadow-2xl mb-8 relative z-10"
         />
-        <h2 className="text-4xl font-extrabold mb-4 text-white">Olá, eu sou o Nicolas! 👋</h2>
+        <h2 className="text-5xl font-black mb-4 tracking-tight">Olá, eu sou o <span className="text-blue-400">Nicolas</span></h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          Estudante de Análise e Desenvolvimento de Sistemas na <span className="text-blue-400 font-semibold">FACENS</span> em Sorocaba/SP. 
-          Focado em criar soluções Full Stack sólidas com **React** e **Spring Boot**.
+          Estudante de ADS na <span className="text-white font-semibold underline decoration-blue-500">FACENS</span>. 
+          Desenvolvedor focado em ecossistemas modernos, transitando entre **Java/Spring** e **Node/TypeScript**.
         </p>
       </header>
 
       {/* Skills */}
-      <section className="bg-gray-800/50 py-12 px-6">
-        <h3 className="text-center text-2xl font-semibold mb-8 text-gray-200 font-mono tracking-widest uppercase text-sm">Stack Tecnológica</h3>
-        <div className="flex justify-center gap-4 flex-wrap max-w-3xl mx-auto">
-          {['Java', 'Spring Boot', 'React', 'JavaScript', 'HTML5', 'CSS3', 'Git', 'SQL'].map(skill => (
-            <span key={skill} className="bg-gray-700/50 px-5 py-2 rounded-lg text-sm font-medium border border-gray-600 hover:border-blue-400 transition-all duration-300">
-              {skill}
-            </span>
-          ))}
+      <section className="py-16 px-6 bg-gray-800/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <Terminal className="text-blue-400 w-5 h-5" />
+            <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gray-500">Stack Tecnológica</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {skills.map(skill => (
+              <div key={skill.name} className="bg-gray-800 border border-gray-700 p-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:border-blue-500/50 transition-all group">
+                <span className={`font-bold text-sm ${skill.color} group-hover:scale-110 transition-transform`}>{skill.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Projetos em Destaque */}
-      <section id="projetos" className="py-20 px-6 max-w-6xl mx-auto">
-        <h3 className="text-3xl font-bold mb-12 text-center">Projetos em Destaque 🚀</h3>
+      {/* Projetos */}
+      <section id="projetos" className="py-24 px-6 max-w-6xl mx-auto">
+        <div className="flex items-center justify-center gap-2 mb-12">
+          <Cpu className="text-blue-400 w-6 h-6" />
+          <h3 className="text-3xl font-bold">Projetos em Destaque</h3>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          
-          {/* Card 1 - O seu CRUD Principal */}
-          <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-all shadow-xl flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-mono text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Full Stack</span>
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">Sistema CRUD Completo</h4>
-              <p className="text-gray-400 text-sm mb-6">
-                Gerenciamento robusto com React no frontend e Spring Boot no backend. Persistência de dados e API RESTful.
-              </p>
+          {/* Card 1 */}
+          <div className="group bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 transition-all">
+            <div className="p-8">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-2 py-1 rounded">Full Stack</span>
+              <h4 className="text-xl font-bold mt-4 mb-2 group-hover:text-blue-400 transition">Sistema CRUD Completo</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">Integração robusta de Spring Boot com React. Arquitetura limpa e API RESTful.</p>
+              <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:gap-3 transition-all">
+                GitHub <ExternalLink size={14} />
+              </a>
             </div>
-            <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-blue-400 font-medium hover:underline text-sm">Ver no GitHub →</a>
           </div>
 
-          {/* Card 2 - Novo Projeto 1 (Edite as informações abaixo) */}
-          <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-green-500/50 transition-all shadow-xl flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-mono text-green-400 bg-green-500/10 px-2 py-1 rounded">Backend</span>
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">API de Gestão Java</h4>
-              <p className="text-gray-400 text-sm mb-6">
-                Desenvolvimento de uma API escalável utilizando Spring Boot para controle de fluxos de dados internos.
-              </p>
+          {/* Card 2 - Novo com Angular/Node */}
+          <div className="group bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 transition-all">
+            <div className="p-8">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 bg-red-500/10 px-2 py-1 rounded">Frontend</span>
+              <h4 className="text-xl font-bold mt-4 mb-2 group-hover:text-red-400 transition">Portal de Dados Angular</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">Dashboard complexo construído com Angular e TypeScript para visualização de métricas.</p>
+              <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:gap-3 transition-all">
+                GitHub <ExternalLink size={14} />
+              </a>
             </div>
-            <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-green-400 font-medium hover:underline text-sm">Ver no GitHub →</a>
           </div>
 
-          {/* Card 3 - Novo Projeto 2 (Edite as informações abaixo) */}
-          <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-purple-500/50 transition-all shadow-xl flex flex-col justify-between">
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-mono text-purple-400 bg-purple-500/10 px-2 py-1 rounded">Frontend</span>
-              </div>
-              <h4 className="text-xl font-bold text-white mb-2">Interface de Dashboard</h4>
-              <p className="text-gray-400 text-sm mb-6">
-                Projeto focado em UI/UX e consumo de APIs externas utilizando React e estilização moderna.
-              </p>
+          {/* Card 3 - Novo com Node/Python */}
+          <div className="group bg-gray-800 rounded-2xl border border-gray-700 overflow-hidden hover:shadow-2xl hover:shadow-green-500/10 transition-all">
+            <div className="p-8">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-500/10 px-2 py-1 rounded">Backend / Automation</span>
+              <h4 className="text-xl font-bold mt-4 mb-2 group-hover:text-green-400 transition">Task Automator</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">Scripts em Python integrados a uma API Node.js para automação de processos internos.</p>
+              <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:gap-3 transition-all">
+                GitHub <ExternalLink size={14} />
+              </a>
             </div>
-            <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-purple-400 font-medium hover:underline text-sm">Ver no GitHub →</a>
           </div>
-
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="text-center py-12 border-t border-gray-800 bg-gray-950">
-        <div className="flex justify-center space-x-6 mb-4">
-          <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition">GitHub</a>
-          <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#0077b5] transition font-bold">LinkedIn</a>
+      <footer className="py-12 px-6 border-t border-gray-800 text-center">
+        <div className="flex justify-center gap-6 mb-6">
+          <a href="https://github.com/nicolashenrique921" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition"><Github /></a>
+          <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-[#0077b5] transition"><Linkedin /></a>
         </div>
-        <p className="text-gray-600 text-sm">Nicolas Henrique de Oliveira • 2026</p>
-        <p className="mt-2 text-xs text-gray-700">FACENS - Sorocaba, SP</p>
+        <p className="text-gray-600 text-xs tracking-widest uppercase">© 2026 Nicolas Henrique • FACENS Sorocaba</p>
       </footer>
     </div>
   );
