@@ -18,7 +18,7 @@ function App() {
   const getIconUrl = (name) => {
     const map = {
       'Java': 'java-coffee-cup-logo',
-      'React': 'react',
+      'React': 'react-native',
       'Angular': 'angularjs',
       'Node.js': 'nodejs',
       'Python': 'python',
@@ -67,10 +67,9 @@ function App() {
         </p>
       </header>
 
-      {/* EXPERIÊNCIA & FORMAÇÃO (O que você pediu) */}
+      {/* EXPERIÊNCIA & FORMAÇÃO */}
       <section id="experiencia" className="py-20 px-6 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Lado Esquerdo - Carreira */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className="text-blue-400" />
@@ -89,7 +88,6 @@ function App() {
             </div>
           </div>
 
-          {/* Lado Direito - Facens */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="text-blue-400" />
@@ -100,8 +98,8 @@ function App() {
               <ul className="space-y-2 list-disc ml-4">
                 <li>Criação de interfaces responsivas e amigáveis (UI/UX).</li>
                 <li>Manutenção de bancos de dados para garantir integridade e disponibilidade.</li>
-                <li>Desenvolvimento de dashboards para visualização de dados e métricas.</li>
-                <li>Implementação de novas features em apps web durante a graduação.</li>
+                <li>Desenvolvimento de dashboards e ferramentas de visualização de dados.</li>
+                <li>Implementação de novas features em aplicativos web durante graduação.</li>
               </ul>
             </div>
           </div>
@@ -126,43 +124,49 @@ function App() {
         </div>
       </section>
 
-      {/* PROJETOS (Resumidos) */}
+      {/* PROJETOS */}
       <section id="projetos" className="py-24 px-6 max-w-6xl mx-auto">
         <div className="flex items-center justify-center gap-2 mb-16">
           <Cpu className="text-blue-400 w-6 h-6" />
           <h3 className="text-4xl font-black tracking-tight">Projetos</h3>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {/* Aqui vão os cards que já tínhamos (Controle Descarte, WorkLog, etc) */}
-          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700">
-            <span className="text-yellow-500 text-[10px] font-bold uppercase tracking-widest">Destaque</span>
+          
+          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700 hover:border-yellow-500/30 transition-all">
+            <span className="text-yellow-500 text-[10px] font-bold uppercase tracking-widest">Python</span>
             <h4 className="text-xl font-bold mt-2">Controle Descarte Lab</h4>
-            <p className="text-gray-400 text-sm mt-4 mb-6">Solução em Python para o Lab da 4inet, automatizando registros de hardware telecom.</p>
-            <a href="https://github.com/nicolashenrique921" className="text-white text-sm font-bold flex items-center gap-2">GitHub <ExternalLink size={14}/></a>
+            <p className="text-gray-400 text-sm mt-4 mb-6">Solução especializada para gestão de hardware telecom com relatórios técnicos em PDF.</p>
+            <a href="https://github.com/nicolashenrique921/ControleDescarteLaboratorio" target="_blank" rel="noreferrer" className="text-white text-sm font-bold flex items-center gap-2 hover:text-yellow-500 transition">GitHub <ExternalLink size={14}/></a>
           </div>
-          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700">
-            <span className="text-red-500 text-[10px] font-bold uppercase tracking-widest">Full Stack</span>
+
+          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700 hover:border-red-500/30 transition-all">
+            <span className="text-red-500 text-[10px] font-bold uppercase tracking-widest">Angular / Node</span>
             <h4 className="text-xl font-bold mt-2">WorkLog System</h4>
-            <p className="text-gray-400 text-sm mt-4 mb-6">Registro de atividades com Angular, Node e MongoDB Atlas.</p>
-            <a href="https://github.com/nicolashenrique921" className="text-white text-sm font-bold flex items-center gap-2">GitHub <ExternalLink size={14}/></a>
+            <p className="text-gray-400 text-sm mt-4 mb-6">Sistema Full Stack para registro de atividades com MongoDB Atlas e paginação.</p>
+            <a href="https://github.com/nicolashenrique921/Registro-Atividades-Frontend" target="_blank" rel="noreferrer" className="text-white text-sm font-bold flex items-center gap-2 hover:text-red-500 transition">GitHub <ExternalLink size={14}/></a>
           </div>
-          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700">
-            <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Java</span>
-            <h4 className="text-xl font-bold mt-2">API Gestão</h4>
-            <p className="text-gray-400 text-sm mt-4 mb-6">CRUD robusto com Spring Boot 3 e persistência de dados.</p>
-            <a href="https://github.com/nicolashenrique921" className="text-white text-sm font-bold flex items-center gap-2">GitHub <ExternalLink size={14}/></a>
+
+          <div className="bg-gray-800/40 p-8 rounded-3xl border border-gray-700 hover:border-blue-400/30 transition-all">
+            <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Spring Boot / React</span>
+            <h4 className="text-xl font-bold mt-2">Gestão Full Stack</h4>
+            <p className="text-gray-400 text-sm mt-4 mb-6">CRUD completo com APIs REST seguras e persistência de dados em banco relacional.</p>
+            <a href="https://github.com/nicolashenrique921/ProjetoCRUD-WebApp" target="_blank" rel="noreferrer" className="text-white text-sm font-bold flex items-center gap-2 hover:text-blue-400 transition">GitHub <ExternalLink size={14}/></a>
           </div>
+
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-20 border-t border-gray-800 text-center">
+      <footer className="py-20 border-t border-gray-800 text-center bg-gray-950/20">
         <div className="flex justify-center gap-6 mb-6">
           <a href="mailto:nicolashenrique921@gmail.com" className="text-gray-400 hover:text-white transition"><Mail size={24}/></a>
-          <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" className="text-gray-400 hover:text-blue-400 transition"><Linkedin size={24}/></a>
+          <a href="https://www.linkedin.com/in/nicolas-henrique-o-6ab219199" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-blue-400 transition"><Linkedin size={24}/></a>
         </div>
         <p className="text-gray-400 font-medium">Nicolas Henrique de Oliveira</p>
-        <p className="text-gray-600 text-xs mt-4">CONTATO: (15) 99158-2545 / (15) 99604-7825</p>
+        <div className="text-gray-600 text-xs mt-4 flex flex-col gap-1">
+            <p>Sôr-15 99158-2545 | 15 99604-7825</p>
+            <p className="italic">FACENS Sorocaba • © 2026</p>
+        </div>
       </footer>
     </div>
   );
